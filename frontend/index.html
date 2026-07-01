@@ -680,7 +680,7 @@ async function callClaude(systemPrompt, pages) {
   }
   content.push({ type: 'text', text: 'Extract the data from all the page images above. Each image is preceded by a "--- FILE: <name> ---" marker telling you which source file it belongs to — use that filename as the "source_file" value for every record extracted from that file. Return only valid JSON, no explanation.' });
 
-  const resp = await fetch('http://localhost:8000/api/claude', {
+  const resp = await fetch('https://gst-itc-tracker.onrender.com/api/claude', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
