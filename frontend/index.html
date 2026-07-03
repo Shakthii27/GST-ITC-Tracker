@@ -271,10 +271,10 @@ body{font-family:var(--font-body);background:var(--paper);color:var(--ink);min-h
       <div class="page-head">
         <div>
           <h1 class="page-title">Audit analysis</h1>
-          <p class="page-sub">Reconcile GST invoices against the auditor's verified payment log.</p>
+          <p class="page-sub">Reconcile GST invoices against GST Returns (GSTR-2B)</p>
         </div>
         <div class="page-meta">
-          <span class="meta-chip">Match tolerance ₹1</span>
+          
           <span class="meta-chip" id="last-run">No reconciliation run yet</span>
         </div>
       </div>
@@ -286,8 +286,8 @@ body{font-family:var(--font-body);background:var(--paper);color:var(--ink);min-h
             <div class="step-head">
               <div class="step-num" id="sn1">01</div>
               <div>
-                <div class="step-title">Upload invoice PDFs</div>
-                <div class="step-sub">Reads each invoice and pulls GSTIN, totals and the tax split. Files are batched automatically.</div>
+                <div class="step-title">Upload invoices</div>
+                <div class="step-sub">Automatically extracts GSTIN, invoice totals, and GST tax split from invoices in bulk.</div>
               </div>
             </div>
             <div class="dropzone" id="dz-inv" ondragover="dzOver(event,'dz-inv')" ondragleave="dzLeave('dz-inv')"
@@ -322,7 +322,7 @@ body{font-family:var(--font-body);background:var(--paper);color:var(--ink);min-h
               <div class="step-num" id="sn2">02</div>
               <div>
                 <div class="step-title">Upload GST Returns (GSTR-2B)</div>
-                <div class="step-sub">Extracts each vendor payment with full source context. Files are batched automatically.</div>
+                <div class="step-sub">Seamlessly reads GSTR-2B returns and extracts invoice details for reconciliation.</div>
               </div>
             </div>
             <div class="dropzone" id="dz-aud" ondragover="dzOver(event,'dz-aud')" ondragleave="dzLeave('dz-aud')"
@@ -365,7 +365,7 @@ body{font-family:var(--font-body);background:var(--paper);color:var(--ink);min-h
 
       <div class="empty" id="empty-state">
         <span class="ei"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2 3h4l2-3h4"/><path d="M4 12 5.5 5h13L20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg></span>
-        <p>Upload invoices and an audit trail above, then run Reconcile to see vendor-by-vendor status here.</p>
+        <p>Upload invoices and payment records to compare, reconcile, and detect discrepancies.</p>
       </div>
 
       <div id="results" style="display:none">
